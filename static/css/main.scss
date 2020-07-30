@@ -1,0 +1,194 @@
+// ****************************************
+// SASS VARIABLES
+// ****************************************
+
+$background-colour: #ffde22;
+$main-text: #000;
+$sub-headings: #ff0000;
+$nav-and-highlight: #ffad14;
+
+// ****************************************
+// GLOBAL
+// ****************************************
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: $background-colour;
+  font: normal 100% sans-serif;
+  color: $main-text;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 3px solid #000;
+  font-weight: 400;
+
+  &:visited {
+    color: #000;
+  }
+}
+
+main {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+// ****************************************
+// TYPOGRAPHY
+// ****************************************
+
+//Hatch Light
+//font-family: hatch, serif;
+//font-weight: 300;
+//font-style: normal;
+
+//Hatch Light Italic
+//font-family: hatch, serif;
+//font-weight: 300;
+//font-style: italic;
+
+//Hatch Regular
+//font-family: hatch, serif;
+//font-weight: 400;
+//font-style: normal;
+
+.main-nav li,
+footer p {
+  font-family: hatch, serif;
+}
+
+.main-nav li {
+  font-size: 1.1em;
+  font-weight: 400;
+  &::selection {
+    background-color: $background-colour;
+  }
+}
+
+.hello-headline {
+  font-size: 8em;
+  margin-top: 0;
+}
+
+h1, h2 {
+  font-family: joschmi, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1::selection,
+h2::selection,
+p .para-highlight::selection,
+a::selection {
+  background-color: $nav-and-highlight;
+  color: #fff;
+}
+
+h1 {
+  font-size: 5em;
+  margin-left: -4px;
+  margin-top: 0.5em;
+}
+
+h2 {
+  font-size: 4em;
+  color: $sub-headings;
+}
+
+p, li {
+  font-family: hatch, serif;
+  font-weight: 300;
+}
+
+p {
+  font-size: 1.3em;
+
+  .para-highlight {
+    font-weight: 400;
+  }
+
+  & + p {
+    margin-top: 1em;
+  }
+
+  &::selection {
+    background-color: $nav-and-highlight;
+  }
+}
+
+footer p {
+  font-weight: 300;
+  font-size: 1em;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+#copyright::selection,
+#year::selection {
+  background-color: $nav-and-highlight;
+}
+
+// ****************************************
+// NAVIGATION
+// ****************************************
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: $nav-and-highlight;
+}
+
+.main-nav {
+  padding: 0.75em 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5em;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li:not(:last-child) {
+  margin-right: 1.5em;
+}
+
+// ****************************************
+// FOOTER
+// ****************************************
+
+footer {
+  margin-top: 1.5em;
+  box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.5);
+
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 5%;
+
+    #copyright {
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-height: 3em;
+    }
+
+    .github-logo {
+      max-height: 2em;
+      padding-right: 1em;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://use.typekit.net/jyb7zhl.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+  <title>{{ title }}</title>
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <li class="home">Home</li>
+      <ul class="nav-links">
+        <li>Work</li>
+        <li>Writing</li>
+        <li>Contact</li>
+      </ul>
+    </nav></header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer>
+    <div class="footer-content">
+      <p><span id="copyright">&copy;</span> <span id="year"></span> marktripney.com</p>
+      <img src="{{ url_for('static', filename='img/GitHub-Mark-120px-plus.png') }}" class="github-logo"
+           alt="GitHub's Octocat"/>
+      <img src="{{ url_for('static', filename='img/Twitter_Logo_Blue.png') }}" alt="Twitter logo"/>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
