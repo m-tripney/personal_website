@@ -16,11 +16,14 @@ li {
 a {
   text-decoration: none;
   color: #000;
-  border-bottom: 3px solid #000;
   font-weight: 400;
 }
 a:visited {
   color: #000;
+}
+
+p a {
+  border-bottom: 3px solid #000;
 }
 
 main {
@@ -41,7 +44,7 @@ footer p {
   background-color: #ffde22;
 }
 
-.hello-headline {
+.page-headline {
   font-size: 8em;
   margin-top: 0;
 }
