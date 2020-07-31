@@ -22,11 +22,25 @@ html {
   color: $main-text;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.body-content {
+  flex: 1 0 auto;
+}
+
 li {
   list-style: none;
 }
 
-a {
+a,
+#email-addr {
   text-decoration: none;
   color: #000;
   font-weight: 400;
@@ -36,7 +50,8 @@ a {
   }
 }
 
-p a {
+p a,
+#email-addr {
   border-bottom: 3px solid #000;
 }
 
@@ -140,6 +155,14 @@ footer p {
   background-color: $nav-and-highlight;
 }
 
+.done-text {
+  font-weight: 400;
+}
+
+.email-addr {
+  font-size: 1.5em;
+}
+
 // ****************************************
 // NAVIGATION
 // ****************************************
@@ -174,6 +197,7 @@ header {
 footer {
   margin-top: 1.5em;
   box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
 
   .footer-content {
     display: flex;
@@ -195,3 +219,10 @@ footer {
     }
   }
 }
+
+// ****************************************
+// CONTACT
+// ****************************************
+
+// Using Flexbox to push footer down
+
