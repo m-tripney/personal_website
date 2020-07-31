@@ -21,5 +21,10 @@ def writing():
     return render_template("writing.html", title="writing")
 
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html", title="contact")
+
+
 if __name__ == "__main__":
     app.run()
