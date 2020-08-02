@@ -1,8 +1,7 @@
-from datetime import date
 from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
-year = date.today().year
+app.url_map.strict_slashes = False
 
 
 @app.route("/")
