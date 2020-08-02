@@ -1,8 +1,7 @@
 from flask import Flask, render_template, url_for
-from flask_talisman import Talisman
+
 
 app = Flask(__name__)
-Talisman(app)
 
 app.url_map.strict_slashes = False
 
