@@ -22,7 +22,7 @@ body {
   flex: 1 0 auto;
 }
 
-li {
+nav li {
   list-style: none;
 }
 
@@ -93,10 +93,21 @@ a::selection {
 p, li {
   font-family: hatch, serif;
   font-weight: 300;
+  font-size: 1.2em;
+}
+
+.feature-list li {
+  list-style-position: outside;
+  margin-left: 1.5em;
+}
+.feature-list li:first-child {
+  margin-top: 0.5em;
+}
+.feature-list li:last-child {
+  margin-bottom: 0.5em;
 }
 
 p {
-  font-size: 1.2em;
   line-height: 1.4em;
 }
 p .para-highlight {
