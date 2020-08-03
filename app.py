@@ -1,7 +1,21 @@
 from flask import Flask, render_template, url_for
+from flask_talisman import Talisman
 
-
+SELF = "'self'"
+csp = {
+    "default-src": SELF,
+    "script-src": [
+        SELF,
+        "unsafe-inline",
+        "use.typekit.net",
+        "cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js",
+    ],
+    "style-src": [SELF, "use.typekit.net"],
+    "font-src": [SELF, "use.typekit.net"],
+    "img-src": [SELF, "p.typekit.net"],
+}
 app = Flask(__name__)
+talisman = Talisman(app, content_security_policy=csp)
 
 app.url_map.strict_slashes = False
 
