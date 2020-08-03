@@ -3,8 +3,32 @@
   <link rel="canonical" href="https://marktripney.com/{{ title }}"/>
 {% endblock canonical %}
 {% block content %}
-  <section id="work-intro">
+  <section id="work-projects">
     <h1 class="page-headline">Work</h1>
+    <p>Each project has a link to its own <span class="para-highlight">GitHub</span> repository, or you can view my entire collection <a href="https://github.com/marktripney" target="_blank">here</a>.</p>
+    <h1 class="sub-heading">To-do List</h1>
+    <p>The ubiquitous to-do list! This little app allows tasks to be added and deleted, of course, but has the addition
+      of <span class="para-highlight">deadlines</span>. With a deadline in place, users can choose how they view their
+      tasks:</p>
+    <ul class="feature-list">
+      <li>View all tasks</li>
+      <li>View all tasks for the coming week</li>
+      <li>For added stress, view tasks with a missed deadline</li>
+    </ul>
+    <p>Further, this is a little more advanced than a number of 'traditional' tutorial-style to-do lists. I wanted the
+      tasks to <span class="para-highlight">persist</span>. In other words, the user should be able to end their
+      session, come back later, and pick up where they left off, tasks intact &mdash; enter <span
+          class="para-highlight">SQLAlchemy</span>.</p>
+    <p>You can view the code for this app <a href="https://github.com/marktripney/todo_list" target="_blank">here</a>.</p>
+    <h1 class="sub-heading">Smart-Calc</h1>
+    <p>A 'smart' calculator app, with <span
+        class="para-highlight">user-defined variables</span> and <span
+        class="para-highlight">postfix notation</span>. Building something to do simple sums would be straightforward. Here, though, the user can assign values to case-sensitive variables, and then use those variables in their calculations. The app checks the calculations for <span
+        class="para-highlight">bracket-matching</span>, and warns if things aren't right.</p>
+    <p>Behind the scenes, the app converts the user's infix notation to postfix notation, requiring <span
+        class="para-highlight">stack manipulation</span> and a careful consideration of <span
+        class="para-highlight">operator precedence</span>.</p>
+    <p>You can view the code for this app <a href="https://github.com/marktripney/smart_calc" target="_blank">here</a>.</p>
   </section>
-  <p>Coming soon...</p>
+
 {% endblock content %}
