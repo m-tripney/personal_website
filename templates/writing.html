@@ -5,6 +5,32 @@
 {% block content %}
   <section id="writing-intro">
     <h1 class="page-headline">Writing</h1>
+    <p>
+      I aim to post at least one piece per week. Most of my work and study
+      right now involves Python, but there will be the occasional
+      JavaScript or CSS article, too. If you spot any errors, please let
+      me know!
+    </p>
   </section>
-  <p>Coming soon...</p>
+  <h2 class="sub-heading">Easy regex</h2>
+  <p>
+    Two string methods from Python's standard library,
+    <code>str.startswith(<span class="code-italic">prefix</span>)</code>
+    and
+    <code>str.endswith(<span class="code-italic">suffix</span>)</code>,
+    are regularly featured in tutorials, but they have a very useful
+    ability that isn't often mentioned. The
+    <span class="code-italic">prefix</span> and
+    <span class="code-italic">suffix</span> arguments can be tuples,
+    lending a regex-like functionality to both.
+  </p>
+  <p>
+    For example, say I'm working on a genealogy project, and want to
+    extract all names with surname 'McMillan' or 'Harris'. I can easily
+    pass a tuple argument like so:
+  </p>
+  <script
+      class="codeblock"
+      src="https://gist.github.com/marktripney/7f3eba4844915c1fe8316cf6618f5dde.js"
+  ></script>
 {% endblock content %}
