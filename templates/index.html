@@ -4,36 +4,60 @@
 {% endblock canonical %}
 {% block content %}
   <section id="hello">
-    <h1 class="page-headline">Hello</h1>
-    <p>My name is <span class="para-highlight">Mark Tripney,</span> and I'm looking for work as a <span
-        class="para-highlight">Python developer</span>. I studied Archaeology (University of York, England), then
-      Architectural Conservation (Edinburgh College of Art, Scotland). I worked in academia for a number of years, and
-      always had a keen interest in design and the <span class="para-highlight">crafting of things</span>. That
-      interest is now focused on Python, and the ways in which it can be applied to <span class="para-highlight">positive, creative endeavours</span>.
+    <h1 class="page-headline" id="big-hello">Hello!</h1>
+    <p>
+      My name is <span class="para-highlight">Mark Tripney,</span> and I'm
+      looking for work as a
+      <span class="para-highlight">Python developer</span>. I studied
+      Archaeology (University of York, England), then Architectural
+      Conservation (Edinburgh College of Art, Scotland). I worked in
+      academia for a number of years, and always had a keen interest in
+      design and the
+      <span class="para-highlight">crafting of things</span>. That
+      interest is now focused on Python, and the ways in which it can be
+      applied to
+      <span class="para-highlight">positive, creative endeavours</span>.
     </p>
-    <p>I am comfortable writing <span class="para-highlight">HTML</span>, <span class="para-highlight">CSS</span>, and
-      <span class="para-highlight">JavaScript</span>. This site was built in <span class="para-highlight">Flask</span>,
-      and I have a fair understanding of <span class="para-highlight">Django</span>. In fact, there's a Django project
-      making its way to the <span class="para-highlight">Work</span> section soon!</p>
+    <p>
+      I am comfortable writing <span class="para-highlight">HTML</span>,
+      <span class="para-highlight">CSS</span>, and
+      <span class="para-highlight">JavaScript</span>. This site was built
+      in <span class="para-highlight">Flask</span>, and I have a fair
+      understanding of <span class="para-highlight">Django</span>. In
+      fact, there's a Django project making its way to the
+      <span class="para-highlight">Work</span> section soon!
+    </p>
   </section>
   <section id="work-overview">
-    <h1 class="sub-heading">Work</h1>
-    <p>In building a <span class="para-highlight">portfolio</span>, I necessarily began with some quite simple projects,
-      progressing to more advanced ones
-      as I felt capable. The collection is being <span class="para-highlight">regularly updated</span>, and I'm working
-      towards a keystone project this summer/autumn (2020). For now, view a range of Python and JavaScript projects <a
-          href="{{ url_for('work') }}">here</a>.</p>
+    <h2 class="sub-heading">Work</h2>
+    <p>
+      In building a <span class="para-highlight">portfolio</span>, I
+      necessarily began with some quite simple projects, progressing to
+      more advanced ones as I felt capable. The collection is being
+      <span class="para-highlight">regularly updated</span>, and I'm
+      working towards a keystone project this summer/autumn (2020). For
+      now, view a range of Python and JavaScript projects
+      <a href={{ url_for('work') }}>here</a>.
+    </p>
   </section>
   <section id="writing-overview">
-    <h1 class="sub-heading">Writing</h1>
-    <p>I enjoy writing about web design, web development, and (most of all) Python. <span class="para-highlight">I love the process</span>,
-      and I've found that, alongside writing code, it's the best way for me to <span class="para-highlight">reinforce my learning</span>.
-      Some of these pieces are short and tightly-focused &mdash; an exploration of a particular language feature, for
-      example &mdash; while others are longer, more subjective thoughts on trends or developments. You can find them
-      all <a href="{{ url_for('writing') }}">here</a>.</p>
+    <h2 class="sub-heading">Writing</h2>
+    <p>
+      I enjoy writing about web design, web development, and (most of all)
+      Python. <span class="para-highlight">I love the process</span>, and
+      I've found that, alongside writing code, it's the best way for me to
+      <span class="para-highlight">reinforce my learning</span>. Some of
+      these pieces are short and tightly-focused &mdash; an exploration of
+      a particular language feature, for example &mdash; while others are
+      longer, more subjective thoughts on trends or developments. You can
+      find them all <a href={{ url_for('writing') }}>here</a>.
+    </p>
   </section>
   <section id="contact">
-    <h1 class="sub-heading">Contact</h1>
-    <p>I'd love to hear from you! You can find my contact details <a href="{{ url_for('contact') }}">here</a>.</p>
+    <h2 class="sub-heading">Contact</h2>
+    <p>
+      I'd love to hear from you! You can find my contact details
+      <a href={{ url_for('contact') }}>here</a>.
+    </p>
   </section>
 {% endblock content %}

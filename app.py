@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, render_template, url_for
 from flask_talisman import Talisman
 
@@ -5,6 +6,11 @@ app = Flask(__name__)
 talisman = Talisman(app, content_security_policy=None)
 
 app.url_map.strict_slashes = False
+
+
+@app.context_processor
+def inject_now():
+    return {"now": datetime.utcnow()}
 
 
 @app.route("/")

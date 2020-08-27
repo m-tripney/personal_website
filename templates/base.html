@@ -30,16 +30,17 @@
   </div>
   <footer>
     <div class="footer-content">
-      <p><span id="copyright">&copy;</span> <span id="year"></span> marktripney.com</p>
-      <img src="{{ url_for('static', filename='img/GitHub-Mark-120px-plus.png') }}" class="github-logo"
-           alt="GitHub's Octocat"/>
-      <img src="{{ url_for('static', filename='img/Twitter_Logo_Blue.png') }}" alt="Twitter logo"/>
+      <p><span id="copyright">&copy;</span> {{ now.year }} marktripney.com</p>
+      <a href="https://github.com/marktripney" target="_blank"><img
+          src="{{ url_for('static', filename='img/GitHub-Mark-120px-plus.png') }}" class="github-logo"
+          alt="GitHub's Octocat"/></a>
+      <a href="https://twitter.com/marktripney" target="_blank"><img
+          src="{{ url_for('static', filename='img/Twitter_Logo_Blue.png') }}" alt="Twitter logo"/></a>
     </div>
   </footer>
   {% if title == "contact" %}
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <script src="{{ url_for('static', filename='js/clip-script.js') }}"></script>
   {% endif %}
-  <script src="{{ url_for('static', filename='js/year-script.js') }}"></script>
 </body>
 </html>

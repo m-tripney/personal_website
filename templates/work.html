@@ -3,32 +3,93 @@
   <link rel="canonical" href="https://marktripney.com/{{ title }}"/>
 {% endblock canonical %}
 {% block content %}
-  <section id="work-projects">
+  <section id="work-intro">
     <h1 class="page-headline">Work</h1>
-    <p>Each project has a link to its own <span class="para-highlight">GitHub</span> repository, or you can view my entire collection <a href="https://github.com/marktripney" target="_blank">here</a>.</p>
-    <h1 class="sub-heading">To-do List</h1>
-    <p>The ubiquitous to-do list! This little app allows tasks to be added and deleted, of course, but has the addition
-      of <span class="para-highlight">deadlines</span>. With a deadline in place, users can choose how they view their
-      tasks:</p>
+    <p>
+      Each project has a link to its own
+      <span class="para-highlight">GitHub</span> repository, or you can
+      view my entire collection
+      <a href="https://github.com/marktripney" target="_blank">here</a>.
+    </p>
+  </section>
+  <section>
+    <h2 class="sub-heading">To-do List</h2>
+    <p>
+      The ubiquitous to-do list! This little app allows tasks to be added
+      and deleted, of course, but has the addition of
+      <span class="para-highlight">deadlines</span>. With a deadline in
+      place, users can choose how they view their tasks:
+    </p>
     <ul class="feature-list">
       <li>View all tasks</li>
       <li>View all tasks for the coming week</li>
       <li>For added stress, view tasks with a missed deadline</li>
     </ul>
-    <p>Further, this is a little more advanced than a number of 'traditional' tutorial-style to-do lists. I wanted the
-      tasks to <span class="para-highlight">persist</span>. In other words, the user should be able to end their
-      session, come back later, and pick up where they left off, tasks intact &mdash; enter <span
-          class="para-highlight">SQLAlchemy</span>.</p>
-    <p>You can view the code for this app <a href="https://github.com/marktripney/todo_list" target="_blank">here</a>.</p>
-    <h1 class="sub-heading">Smart-Calc</h1>
-    <p>A 'smart' calculator app, with <span
-        class="para-highlight">user-defined variables</span> and <span
-        class="para-highlight">postfix notation</span>. Building something to do simple sums would be straightforward. Here, though, the user can assign values to case-sensitive variables, and then use those variables in their calculations. The app checks the calculations for <span
-        class="para-highlight">bracket-matching</span>, and warns if things aren't right.</p>
-    <p>Behind the scenes, the app converts the user's infix notation to postfix notation, requiring <span
-        class="para-highlight">stack manipulation</span> and a careful consideration of <span
-        class="para-highlight">operator precedence</span>.</p>
-    <p>You can view the code for this app <a href="https://github.com/marktripney/smart_calc" target="_blank">here</a>.</p>
+    <p>
+      Further, this is a little more advanced than a number of
+      'traditional' tutorial-style to-do lists. I wanted the tasks to
+      <span class="para-highlight">persist</span>. In other words, the
+      user should be able to end their session, come back later, and pick
+      up where they left off, tasks intact &mdash; enter
+      <span class="para-highlight">SQLAlchemy</span>.
+    </p>
+    <p>
+      You can view the code for this app
+      <a href="https://github.com/marktripney/todo_list" target="_blank"
+      >here</a
+      >.
+    </p>
+  </section>
+  <section>
+    <h2 class="sub-heading">Smart-Calc</h2>
+    <p>
+      A 'smart' calculator app, with
+      <span class="para-highlight">user-defined variables</span> and
+      <span class="para-highlight">postfix notation</span>. Building
+      something to do simple sums would be straightforward. Here, though,
+      the user can assign values to case-sensitive variables, and then use
+      those variables in their calculations. The app checks the
+      calculations for
+      <span class="para-highlight">bracket-matching</span>, and warns if
+      things aren't right.
+    </p>
+    <p>
+      Behind the scenes, the app converts the user's infix notation to
+      postfix notation, requiring
+      <span class="para-highlight">stack manipulation</span> and a careful
+      consideration of
+      <span class="para-highlight">operator precedence</span>.
+    </p>
+    <p>
+      You can view the code for this app
+      <a href="https://github.com/marktripney/smart_calc" target="_blank"
+      >here</a
+      >.
+    </p>
+  </section>
+  <section>
+    <h2 class="sub-heading">Tic-Tac-Toe</h2>
+    <p>
+      A simple implementation, in Python, of the classic game. Users take
+      turns to place noughts and crosses on the game grid. The first one
+      to make three-in-a-row is the winner!
+      <span class="para-highlight">Checks are made for</span> valid
+      coordinates and for valid locations — users can't place their token
+      on an already-occupied square.
+    </p>
+    <p>
+      And, of course, checks are made for game condition — either the game
+      is ongoing; someone has won; or the game is tied.
+      <span class="para-highlight"
+      >I'm going to refine this with some AI</span
+      >, so the user can play against the computer. Coming soon!
+    </p>
+    <p>
+      You can view the code for this app
+      <a href="https://github.com/marktripney/tic_tac_toe" target="_blank"
+      >here</a
+      >.
+    </p>
   </section>
 
 {% endblock content %}

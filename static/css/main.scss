@@ -13,7 +13,16 @@ $nav-and-highlight: #ffad14;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+
+a::-moz-focus-inner {
+  border: 0;
+}
+
+
+
 
 html {
   background-color: $background-colour;
@@ -21,7 +30,8 @@ html {
   color: $main-text;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -34,8 +44,9 @@ body {
   flex: 1 0 auto;
 }
 
-nav li {
-  list-style: none;
+main {
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 a,
@@ -43,7 +54,6 @@ a,
   text-decoration: none;
   color: #000;
   font-weight: 400;
-
   &:visited {
     color: #000;
   }
@@ -54,101 +64,28 @@ p a,
   border-bottom: 3px solid #000;
 }
 
-main {
-  max-width: 90%;
-  margin: 0 auto;
-}
-
 // ****************************************
 // TYPOGRAPHY
 // ****************************************
 
-//Hatch Light
-//font-family: hatch, serif;
-//font-weight: 300;
-//font-style: normal;
+// ** PARAGRAPH TEXT & LISTS
 
-//Hatch Light Italic
-//font-family: hatch, serif;
-//font-weight: 300;
-//font-style: italic;
-
-//Hatch Regular
-//font-family: hatch, serif;
-//font-weight: 400;
-//font-style: normal;
-
-.main-nav li,
-footer p {
-  font-family: hatch, serif;
-}
-
-.main-nav li {
-  font-size: 1em;
+p,
+li {
+  font-family: alda, serif;
   font-weight: 400;
-
-  &::selection {
-    background-color: $background-colour;
-  }
-}
-
-.page-headline {
-  font-size: 6em;
-  margin-top: 0;
-}
-
-h1, h2 {
-  font-family: joschmi, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-h1::selection,
-h2::selection,
-p .para-highlight::selection,
-a::selection {
-  background-color: $nav-and-highlight;
-  color: #fff;
-}
-
-.page-headline {
-  margin-left: -4px;
-  margin-top: 0.1em;
-}
-
-.sub-heading {
-  margin-top: 0.25em;
-  margin-left: -2px;
-  font-size: 5em;
-}
-
-p, li {
-  font-family: hatch, serif;
-  font-weight: 300;
-  font-size: 1.2em;
-}
-
-.feature-list li {
-  list-style-position: outside;
-  //padding-left: 0.5em;
-  margin-left: 1.5em;
-  &:first-child {
-    margin-top: 0.5em;
-  }
-  &:last-child {
-    margin-bottom: 0.5em;
-  }
+  font-size: 1.3em;
 }
 
 p {
-  line-height: 1.4em;
+  line-height: 1.3em;
 
   .para-highlight {
-    font-weight: 400;
+    font-weight: 700;
   }
 
   & + p {
-    margin-top: 1em;
+    margin-top: 0.7em;
   }
 
   &::selection {
@@ -156,11 +93,62 @@ p {
   }
 }
 
+// ** HEADINGS, H1 & H2
+
+h1.page-headline {
+  font-family: canada-type-gibson, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 4.5em;
+}
+
+h2 {
+  font-family: canada-type-gibson, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3.2em;
+}
+
+// ** NAV
+
+.main-nav li,
 footer p {
-  font-weight: 300;
-  font-size: 1em;
-  margin-right: auto;
-  margin-bottom: 0;
+  font-family: canada-type-gibson, sans-serif;
+}
+
+.main-nav li {
+  font-size: 1.1em;
+  font-weight: 400;
+
+  &::selection {
+    background-color: $background-colour;
+  }
+}
+
+// ** LISTS
+
+.feature-list li {
+  list-style-position: outside;
+  font-size: 1.3em;
+  margin-left: 1.5em;
+
+  &:first-child {
+    margin-top: 0.5em;
+  }
+
+  &:last-child {
+    margin-bottom: 0.5em;
+  }
+}
+
+// ** SELECTED TEXT (e.g. PRE-COPY & PASTE)
+
+h1::selection,
+h2::selection,
+p .para-highlight::selection,
+a::selection {
+  background-color: $nav-and-highlight;
+  color: #fff;
 }
 
 #copyright::selection,
@@ -185,13 +173,29 @@ p.copy-confirm {
 }
 
 // ****************************************
+// SECTIONS
+// ****************************************
+
+section {
+  margin-bottom: 2em;
+  &:last-of-type:not(:first-of-type) {
+    margin-bottom: 0;
+  }
+}
+
+// ****************************************
 // NAVIGATION
 // ****************************************
 
 header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: $nav-and-highlight;
+}
+
+nav li {
+  list-style: none;
 }
 
 .main-nav {
@@ -208,8 +212,12 @@ header {
 }
 
 .nav-links li:not(:last-child) {
-  margin-right: 1.3em;
+  margin-right: 1.2em;
 }
+
+// ****************************************
+// IMAGES
+// ****************************************
 
 // ****************************************
 // FOOTER
@@ -222,7 +230,8 @@ footer {
 
   .footer-content {
     p {
-      font-size: 0.8em;
+      font-size: 0.9em;
+      margin-right: auto;
     }
 
     display: flex;
@@ -246,24 +255,98 @@ footer {
 }
 
 // ****************************************
+// CODE
+// ****************************************
+
+code {
+  font-family: source-code-pro, monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.code-italic {
+  font-family: source-code-pro, monospace;
+  font-weight: 500;
+  font-style: italic;
+}
+
+// ** GISTS
+
+body .gist .gist-file {
+  border: none;
+  margin-top: 1em;
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+body .gist .gist-data {
+  border-bottom: none;
+  border-radius: 5px;
+  background-color: #f1f3f5;
+}
+
+body .gist .blob-wrapper {
+  border-radius: 0;
+}
+
+body .gist .highlight {
+  background-color: transparent;
+  font-family: source-code-pro, monospace;
+  font-size: 0.7em;
+}
+
+body .gist .highlight td {
+  padding: 5px 15px !important;
+  line-height: 1;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+body .gist tr:first-child td {
+  padding-top: 15px !important;
+}
+
+body .gist tr:last-child td {
+  padding-bottom: 15px !important;
+}
+
+body .gist .blob-num {
+  color: #ced4da;
+  background-color: #495057;
+  pointer-events: none;
+}
+
+body .gist .gist-meta {
+  display: none;
+}
+
+// ****************************************
 // MEDIA QUERIES
 // ****************************************
 
 @media screen and (min-width: 414px) {
   .main-nav li {
-    font-size: 1.1em;
+    font-size: 1.3em;
   }
   .nav-links li:not(:last-child) {
     margin-right: 1.5em;
   }
-  .page-headline {
-    font-size: 8em;
+  #big-hello {
+    font-size: 7.5em;
   }
-  .sub-heading {
-    font-size: 5.5em;
+  h1.page-headline {
+    font-size: 6em;
+  }
+  h2.sub-heading {
+    font-size: 4em;
   }
   p {
-    font-size: 1.3em;
+    font-size: 1.4em;
+    line-height: 1.3em;
+  }
+  body .gist .highlight {
+    font-size: 0.9em;
   }
   .email-addr {
     font-size: 1.4em;
@@ -277,12 +360,23 @@ footer {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   main {
     max-width: 80%;
   }
+  h1.page-headline {
+    font-size: 8em;
+    margin-bottom: -5px;
+  }
+  #big-hello {
+    font-size: 8.5em;
+  }
   .main-nav {
     padding: 0.75em 10%;
+    margin-bottom: 1.5em;
+  }
+  body .gist .highlight {
+    font-size: 1em;
   }
   footer {
     .footer-content {
@@ -318,4 +412,3 @@ footer {
     }
   }
 }
-
