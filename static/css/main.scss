@@ -21,9 +21,6 @@ a::-moz-focus-inner {
   border: 0;
 }
 
-
-
-
 html {
   background-color: $background-colour;
   font: normal 100% sans-serif;
@@ -157,7 +154,7 @@ a::selection {
 }
 
 .done-text {
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .email-addr {
