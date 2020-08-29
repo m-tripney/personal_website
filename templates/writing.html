@@ -31,27 +31,87 @@
       extract all names with surname 'McMillan' or 'Harris'. I can easily
       pass a tuple argument like so:
     </p>
-    <script
-        class="codeblock"
-        src="https://gist.github.com/marktripney/7f3eba4844915c1fe8316cf6618f5dde.js"
-    ></script>
+    <section class="codeblock">
+      <script
+          class="codeblock"
+          src="https://gist.github.com/marktripney/7f3eba4844915c1fe8316cf6618f5dde.js"
+      ></script>
+    </section>
+    <p>As is often the case, the functionality of 'out-the-box' Python is remarkable!</p>
   </section>
   <section class="article">
     <h2 class="sub-heading">100 Days of Code</h2>
+    <p>Last week, I started Talk Python's <span class="para-highlight">100 Days of Code in Python</span> programme. The
+      thinking behind it, as the title
+      suggests, is that students code for 100 days straight, backed-up by near-daily video tutorials on a wide range of
+      subjects. I say near-daily, because every few days there's a 'free' coding day, where the objective is to build
+      something using the topics covered in the most recent block of tutorials.</p>
+    <p>Before starting, I was already pretty conscientious about coding at least a little bit every day. But this
+      provides
+      more structure right now, which I can use, and — even more important — compels me to build! These projects are
+      often small, but I'm less concerned with that right now than I am with <span class="para-highlight">getting into the habit of producing</span>.
+    </p>
+    <p>I'll be writing (and Tweeting!) a lot about what I'm doing with this course and, of course, posting links to and
+      descriptions of
+      the projects I build. Early days, but I'm excited to see where this goes. From my perspective, it's pitched at an
+      intermediate level, so I'm looking forward to pushing myself as it proceeds.</p>
+    <p>Which reminds me... One of the things I need to address with this 'Writing' section is to make it more of an
+      actual,
+      working blog. Right now, with just a few pieces of content, it's fine to simply 'plug in' some articles with
+      straight HTML. As it grows, though, tagged, date-stamped, entries would be far preferable, so that's where it'll
+      go
+      next.
+      This is a Flask site, so adding a Flask-based blog is reasonably straightforward.</p>
   </section>
-  <p>Last week, I started Talk Python's '100 Days of Code in Python' programme. The thinking behind it, as the title
-    suggests, is that students code for 100 days straight, backed-up by near-daily video tutorials on a wide range of
-    subjects. I say near-daily, because every few days there's a 'free' coding day, where the objective is to build
-    something using the topics covered in the most recent block of tutorials.</p>
-  <p>Before starting, I was already pretty conscientious about coding at least a little bit every day. But this provides
-    more structure right now, which I can use, and — even more important — compels me to build! These projects are
-    often small, but I'm less concerned with that right now than I am with getting into the habit of producing.</p>
-  <p>I'll be writing (and Tweeting!) a lot about what I'm doing with this course and, of course, posting links to and descriptions of
-    the projects I build. Early days, but I'm excited to see where this goes. From my perspective, it's pitched at an
-    intermediate level, so I'm looking forward to pushing myself as it proceeds.</p>
-  <p>Which reminds me... One of the things I need to address with this 'Writing' section is to make it more of an actual,
-    working blog. Right now, with just a few pieces of content, it's fine to simply 'plug in' some articles with
-    straight HTML. As it grows, though, tagged, date-stamped, entries would be far preferable, so that's where it'll go
-    next.
-    This is a Flask site, so adding a Flask-based blog is reasonably straightforward.</p>
+  <section class="article">
+    <h2 class="sub-heading">datetime</h2>
+    <p>The first section of the <span class="para-highlight">100 Days of Code</span> programme revolved around <code>datetime</code>
+      objects and
+      <code>timedelta</code>. There was an initial round of tutorials, introducing the core concepts, before a coding
+      challenge: parse information from some (provided) server logs. My approach to this was to use a simple
+      regular expression to extract numbers from the relevant logline strings and, that done, extract one from another.
+      Fairly straightforward (once I'd had a quite regex refresher) &mdash; you can view the code <a
+          href="https://github.com/marktripney/100DaysOfCode/blob/master/d2_parsing_dates_from_logs.py">here</a>.</p>
+    <p>More interesting was the challenge &mdash; build an app using <code>datetime</code> and <code>timedelta</code>.
+      I've just started Ken Youens-Clark's excellent <span class="para-highlight">Tiny Python Projects</span> (2020,
+      Manning Publications), and he makes
+      regular use of <code>argparse</code>. So, with that as a foundation, I set about building a command-line <span
+          class="para-highlight">Pomodoro</span> study
+      timer.
+      Here's the finished code &mdash; I'll explain what I did afterwards...</p>
+    <section class="codeblock">
+      <script src="https://gist.github.com/marktripney/e42d88cc5b2d3f841bd1565f3332077c.js"></script>
+    </section>
+    <p>I started by assessing arguments in the <code>get_args</code> function. <code>study</code>, an integer
+      representing the length of the study
+      session, is positional and required, and there's an optional <code>--alarm</code> argument too, if the user wants
+      to be
+      notified
+      when their study time's up.</p>
+    <p>Then, I call the simple <code>get_time</code> function, using <code>datetime.now()</code> to get a current <code>datetime</code>
+      object. This object is
+      'naive', in that it doesn't acknowledge any specific context (daylight savings time, for example), but it's
+      adequate
+      for this app. On line 35, I use the <code>strftime()</code> method to tease out the current time from this object.
+    </p>
+    <p>These arguments and the current time are then passed to the <code>calc_end_time</code> function. Here (line 26),
+      I use
+      <code>timedelta</code>
+      to
+      calculate when the study period will end, and show a 'bell' emoji to reflect whether the alarm was activated or
+      not
+      (if not, the bell is scored through).</p>
+    <p>Finally, it's time to actually start the countdown. I use <code>divmod</code> (line 14) to get a tuple of minutes
+      and seconds
+      and
+      print these, ending each line with a <code>\r</code> (carriage return) in order that the counter stays on the
+      same line.
+      Without
+      this, the updated timer would always start on a new line, giving seconds lines of output!
+      <code>time.sleep(1)</code> on line 17
+      pauses the program for one second, then line 18 deducts one second from the counter...</p>
+    <p>There are some issues here, no doubt, but I was pleased to get it working in a relatively short time (around one
+      hour). I'll revisit it over the coming days and refine here and there, but... <span class="para-highlight">onwards!</span>
+    </p>
+  </section>
 {% endblock content %}
