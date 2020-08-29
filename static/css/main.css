@@ -211,6 +211,10 @@ code {
   font-style: italic;
 }
 
+section.codeblock {
+  margin: 1em 0;
+}
+
 body .gist .gist-file {
   border: none;
   margin-top: 1em;
