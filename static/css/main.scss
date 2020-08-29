@@ -330,7 +330,10 @@ body .gist .gist-meta {
 // MEDIA QUERIES
 // ****************************************
 
-@media screen and (min-width: 414px) {
+@media screen and (min-width: 400px) {
+  .main-nav {
+    margin-bottom: 1em;
+  }
   .main-nav li {
     font-size: 1.3em;
   }
