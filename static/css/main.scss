@@ -2,9 +2,10 @@
 // SASS VARIABLES
 // ****************************************
 
-$background-colour: #ffde22;
+//$background-colour: #ffde22;
+$background-colour: #fff;
 $main-text: #000;
-$nav-and-highlight: #ffad14;
+$nav-and-highlight: #F3CF55 ;
 
 // ****************************************
 // GLOBAL
@@ -144,9 +145,11 @@ footer p {
 h1::selection,
 h2::selection,
 p .para-highlight::selection,
+code::selection,
+.code-italic::selection,
 a::selection {
   background-color: $nav-and-highlight;
-  color: #fff;
+  color: #808080;
 }
 
 #copyright::selection,
@@ -156,6 +159,9 @@ a::selection {
 
 .done-text {
   font-weight: 700;
+  &::selection {
+    color: #808080;
+  }
 }
 
 .email-addr {
