@@ -69,8 +69,8 @@
       objects and
       <code>timedelta</code>. There was an initial round of tutorials, introducing the core concepts, before a coding
       challenge: parse information from some (provided) server logs. My approach to this was to use a simple
-      regular expression to extract numbers from the relevant logline strings and, that done, extract one from another.
-      Fairly straightforward (once I'd had a quite regex refresher) &mdash; you can view the code <a
+      regular expression to extract numbers from the relevant logline strings and, that done, subtract one from another.
+      Fairly straightforward (once I'd had a quick regex refresher) &mdash; you can view the code <a
           href="https://github.com/marktripney/100DaysOfCode/blob/master/d2_parsing_dates_from_logs.py">here</a>.</p>
     <p>More interesting was the challenge &mdash; build an app using <code>datetime</code> and <code>timedelta</code>.
       I've just started Ken Youens-Clark's excellent <span class="para-highlight">Tiny Python Projects</span> (2020,
@@ -107,7 +107,7 @@
       print these, ending each line with a <code>\r</code> (carriage return) in order that the counter stays on the
       same line.
       Without
-      this, the updated timer would always start on a new line, giving seconds lines of output!
+      this, the updated timer would always start on a new line, giving <code>seconds</code> lines of output!
       <code>time.sleep(1)</code> on line 17
       pauses the program for one second, then line 18 deducts one second from the counter...</p>
     <p>There are some issues here, no doubt, but I was pleased to get it working in a relatively short time (around one
