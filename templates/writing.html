@@ -12,25 +12,46 @@
       me know!
     </p>
   </section>
-  <h2 class="sub-heading">Easy regex</h2>
-  <p>
-    Two string methods from Python's standard library,
-    <code>str.startswith(<span class="code-italic">prefix</span>)</code>
-    and
-    <code>str.endswith(<span class="code-italic">suffix</span>)</code>,
-    are regularly featured in tutorials, but they have a very useful
-    ability that isn't often mentioned. The
-    <span class="code-italic">prefix</span> and
-    <span class="code-italic">suffix</span> arguments can be tuples,
-    lending a regex-like functionality to both.
-  </p>
-  <p>
-    For example, say I'm working on a genealogy project, and want to
-    extract all names with surname 'McMillan' or 'Harris'. I can easily
-    pass a tuple argument like so:
-  </p>
-  <script
-      class="codeblock"
-      src="https://gist.github.com/marktripney/7f3eba4844915c1fe8316cf6618f5dde.js"
-  ></script>
+  <section class="article">
+    <h2 class="sub-heading">Easy regex</h2>
+    {# 26/08/20 #}
+    <p>
+      Two string methods from Python's standard library,
+      <code>str.startswith(<span class="code-italic">prefix</span>)</code>
+      and
+      <code>str.endswith(<span class="code-italic">suffix</span>)</code>,
+      are regularly featured in tutorials, but they have a very useful
+      ability that isn't often mentioned. The
+      <span class="code-italic">prefix</span> and
+      <span class="code-italic">suffix</span> arguments can be tuples,
+      lending a regex-like functionality to both.
+    </p>
+    <p>
+      For example, say I'm working on a genealogy project, and want to
+      extract all names with surname 'McMillan' or 'Harris'. I can easily
+      pass a tuple argument like so:
+    </p>
+    <script
+        class="codeblock"
+        src="https://gist.github.com/marktripney/7f3eba4844915c1fe8316cf6618f5dde.js"
+    ></script>
+  </section>
+  <section class="article">
+    <h2 class="sub-heading">100 Days of Code</h2>
+  </section>
+  <p>Last week, I started Talk Python's '100 Days of Code in Python' programme. The thinking behind it, as the title
+    suggests, is that students code for 100 days straight, backed-up by near-daily video tutorials on a wide range of
+    subjects. I say near-daily, because every few days there's a 'free' coding day, where the objective is to build
+    something using the topics covered in the most recent block of tutorials.</p>
+  <p>Before starting, I was already pretty conscientious about coding at least a little bit every day. But this provides
+    more structure right now, which I can use, and — even more important — compels me to build! These projects are
+    often small, but I'm less concerned with that right now than I am with getting into the habit of producing.</p>
+  <p>I'll be writing (and Tweeting!) a lot about what I'm doing with this course and, of course, posting links to and descriptions of
+    the projects I build. Early days, but I'm excited to see where this goes. From my perspective, it's pitched at an
+    intermediate level, so I'm looking forward to pushing myself as it proceeds.</p>
+  <p>Which reminds me... One of the things I need to address with this 'Writing' section is to make it more of an actual,
+    working blog. Right now, with just a few pieces of content, it's fine to simply 'plug in' some articles with
+    straight HTML. As it grows, though, tagged, date-stamped, entries would be far preferable, so that's where it'll go
+    next.
+    This is a Flask site, so adding a Flask-based blog is reasonably straightforward.</p>
 {% endblock content %}
