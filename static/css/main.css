@@ -149,6 +149,7 @@ header {
   position: sticky;
   top: 0;
   background-color: #ffad14;
+  z-index: 1;
 }
 
 nav li {
